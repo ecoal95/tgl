@@ -1,4 +1,4 @@
-/* 
+/*
     This file is part of tgl-library
 
     This library is free software; you can redistribute it and/or
@@ -32,7 +32,7 @@
 
 struct tgl_state tgl_state;
 
-    
+
 void tgl_set_binlog_mode (struct tgl_state *TLS, int mode) {
   TLS->binlog_enabled = mode;
 }
@@ -40,7 +40,7 @@ void tgl_set_binlog_mode (struct tgl_state *TLS, int mode) {
 void tgl_set_binlog_path (struct tgl_state *TLS, const char *path) {
   TLS->binlog_name = tstrdup (path);
 }
-    
+
 void tgl_set_auth_file_path (struct tgl_state *TLS, const char *path) {
   TLS->auth_file = tstrdup (path);
 }
@@ -72,7 +72,7 @@ void tgl_init (struct tgl_state *TLS) {
   TLS->message_list.prev_use = &TLS->message_list;
 
   tglmp_on_start (TLS);
-  
+
   if (!TLS->app_id) {
     TLS->app_id = TG_APP_ID;
     TLS->app_hash = tstrdup (TG_APP_HASH);
@@ -123,6 +123,10 @@ void tgl_set_net_methods (struct tgl_state *TLS, struct tgl_net_methods *methods
 
 void tgl_set_timer_methods (struct tgl_state *TLS, struct tgl_timer_methods *methods) {
   TLS->timer_methods = methods;
+}
+
+void* tgl_get_ev_base (struct tgl_state *TLS) {
+    return TLS->ev_base;
 }
 
 void tgl_set_ev_base (struct tgl_state *TLS, void *ev_base) {

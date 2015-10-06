@@ -324,6 +324,8 @@ void tgl_enable_pfs (struct tgl_state *TLS);
 void tgl_set_test_mode (struct tgl_state *TLS);
 void tgl_set_net_methods (struct tgl_state *TLS, struct tgl_net_methods *methods);
 void tgl_set_timer_methods (struct tgl_state *TLS, struct tgl_timer_methods *methods);
+
+void* tgl_get_ev_base (struct tgl_state *TLS);
 void tgl_set_ev_base (struct tgl_state *TLS, void *ev_base);
 
 int tgl_authorized_dc (struct tgl_state *TLS, struct tgl_dc *DC);
