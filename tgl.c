@@ -125,8 +125,12 @@ void tgl_set_timer_methods (struct tgl_state *TLS, struct tgl_timer_methods *met
   TLS->timer_methods = methods;
 }
 
+int tgl_get_our_id(struct tgl_state *TLS) {
+  return TLS->our_id;
+}
+
 void* tgl_get_ev_base (struct tgl_state *TLS) {
-    return TLS->ev_base;
+  return TLS->ev_base;
 }
 
 void tgl_set_ev_base (struct tgl_state *TLS, void *ev_base) {

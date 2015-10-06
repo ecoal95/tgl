@@ -325,6 +325,7 @@ void tgl_set_test_mode (struct tgl_state *TLS);
 void tgl_set_net_methods (struct tgl_state *TLS, struct tgl_net_methods *methods);
 void tgl_set_timer_methods (struct tgl_state *TLS, struct tgl_timer_methods *methods);
 
+int tgl_get_our_id(struct tgl_state *TLS);
 void* tgl_get_ev_base (struct tgl_state *TLS);
 void tgl_set_ev_base (struct tgl_state *TLS, void *ev_base);
 
